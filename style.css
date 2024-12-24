@@ -1,0 +1,66 @@
+body{
+    background-image: url(matrice.jpg);
+    text-align: center;
+}
+
+input{
+    width: 50px;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.add{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color:teal;
+}
+
+.add:hover{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color:orangered;
+}
+
+.titre{
+    background-color: rgba(194, 0, 0, 0.445);
+    border-radius: 20px;
+    font-size: 40px;
+    font-family:monospace;
+}
+
+chat{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat:hover{
+    text-shadow: 0px 0px 20px aqua;
+}
+
+h2{
+    color: white;
+    display: inline-block;
+}
+
+div{
+    display: inline-block;
+}
+
+#valiny{
+    display: inline-block;
+    color: white;
+    font-weight: bolder;
+    text-align: left;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(0, 0, 0, 0.815);
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 400px){
+    #valiny{
+        font-size: 15px;
+    }
+}

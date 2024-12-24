@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Addition matriciel</title>
+</head>
+<body>
+    
+    <h2 class="titre">Calcul de la somme de deux matrices 3x3</h2>
+    <form action="#" method="post" id="somme_matrice">
+    <div>
+        <input type="number" name="1" id="1" value="0">
+        <input type="number" name="2" id="2" value="0">
+        <input type="number" name="3" id="3" value="0"><br>
+        <input type="number" name="4" id="4" value="0">
+        <input type="number" name="5" id="5" value="0">
+        <input type="number" name="6" id="6" value="0"><br>
+        <input type="number" name="7" id="7" value="0">
+        <input type="number" name="8" id="8" value="0">
+        <input type="number" name="9" id="9" value="0">
+    </div>
+                    <h2>+</h2>
+    <div>
+        <input type="number" name="a" id="a" value="0">
+        <input type="number" name="b" id="b" value="0">
+        <input type="number" name="c" id="c" value="0"><br>
+        <input type="number" name="d" id="d" value="0">
+        <input type="number" name="e" id="e" value="0">
+        <input type="number" name="f" id="f" value="0"><br>
+        <input type="number" name="g" id="g" value="0">
+        <input type="number" name="h" id="h" value="0">
+        <input type="number" name="i" id="i" value="0">
+    </div><br><br><br><br>
+
+    <input type="submit" value="Additionner" class="add">
+    </form>
+                    <h2>=</h2><br><br>
+
+                    
+                    <p id="valiny"></p><br>
+                    
+
+                    <a href="../index.php" class="chat"><h2>CHATBOT<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="20px" height="20px"><path fill="yellow" d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"/></svg></h2></a>
+</body>
+
+<script>
+    function recup_valeur(id){
+        var input = document.getElementById(id);
+        var val = parseFloat(input.value);
+        return(val);
+    }
+
+document.getElementById("somme_matrice").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    matrice1 = [recup_valeur("1"), recup_valeur("2"), recup_valeur("3"), recup_valeur("4"), recup_valeur("5"), recup_valeur("6"), recup_valeur("7"), recup_valeur("8"), recup_valeur("9")];
+    matrice2 = [recup_valeur("a"), recup_valeur("b"), recup_valeur("c"), recup_valeur("d"), recup_valeur("e"), recup_valeur("f"), recup_valeur("g"), recup_valeur("h"), recup_valeur("i")];
+
+    var k= '', p='', reponse='', ligne='';
+    for(k=0; k<=9; k++){
+            if(k==2 || k==5 ){
+                ligne = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> ';
+            }
+            else if(k==8){
+                ligne = '<!--';
+            }
+            else{
+                ligne = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+            }
+            p= (matrice1[k]+matrice2[k]);
+            reponse += p + ligne;
+        }
+    reponse_final = reponse.toString(); 
+    var emplacement = document.getElementById("valiny");
+
+    emplacement.innerHTML = reponse_final;
+});
+</script>
+</html>
